@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolektt - 인증 오류</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .error-icon::after {
+            content: "✕";
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 16px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .button-group {
+            margin-top: 30px;
+        }
+        
+        .app-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .app-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .secondary-button {
+            background-color: #95a5a6;
+        }
+        
+        .secondary-button:hover {
+            background-color: #7f8c8d;
+        }
+        
+        .info-box {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #ffc107;
+            text-align: left;
+        }
+        
+        .info-box h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .troubleshooting {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .troubleshooting ol {
+            padding-left: 20px;
+        }
+        
+        .troubleshooting li {
+            margin-bottom: 8px;
+            color: #856404;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            color: #95a5a6;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .error-details {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 14px;
+            text-align: left;
+            display: none;
+        }
+        
+        .show-details {
+            color: #3498db;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .logo {
+                font-size: 28px;
+            }
+            
+            .app-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Kolektt</div>
+        
+        <div class="error-icon"></div>
+        
+        <h1>인증 중 오류가 발생했습니다</h1>
+        
+        <p class="subtitle">
+            이메일 인증 과정에서 문제가 발생했습니다.<br>
+            아래의 해결 방법을 시도해보시거나 고객지원팀에 문의해주세요.
+        </p>
+        
+        <div class="button-group">
+            <a href="#" class="app-button" onclick="openApp()">앱으로 돌아가기</a>
+            <a href="mailto:support@kolektt.com" class="app-button secondary-button">고객지원 문의</a>
+        </div>
+        
+        <div class="info-box">
+            <h3>⚠️ 문제 해결 방법</h3>
+            <div class="troubleshooting">
+                <ol>
+                    <li>이메일 인증 링크가 만료되었을 수 있습니다. 앱에서 새로운 인증 이메일을 요청해보세요.</li>
+                    <li>이메일 링크를 올바르게 클릭했는지 확인해보세요.</li>
+                    <li>브라우저의 쿠키와 캐시를 삭제한 후 다시 시도해보세요.</li>
+                    <li>다른 브라우저나 디바이스에서 링크를 열어보세요.</li>
+                    <li>위 방법들이 도움이 되지 않으면 고객지원팀에 문의해주세요.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="show-details" onclick="toggleErrorDetails()">
+            기술적 세부사항 보기
+        </div>
+        
+        <div class="error-details" id="errorDetails">
+            오류 코드: <span id="errorCode">UNKNOWN</span><br>
+            오류 메시지: <span id="errorMessage">알 수 없는 오류</span><br>
+            타임스탬프: <span id="timestamp"></span><br>
+            URL 파라미터: <span id="urlParams"></span>
+        </div>
+        
+        <div class="footer">
+            추가 도움이 필요하시면 <a href="mailto:support@kolektt.com">support@kolektt.com</a>으로 연락해주세요.<br>
+            <a href="index.html">개인정보처리방침</a> | <a href="mailto:privacy@kolektt.com">개인정보보호 문의</a>
+        </div>
+    </div>
+
+    <script>
+        function openApp() {
+            // 앱으로 리디렉션 시도 (딥링크)
+            const appScheme = 'kolektt://error';
+            const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.kolektt.app';
+            const appStoreUrl = 'https://apps.apple.com/app/kolektt/id123456789';
+            
+            // 모바일 디바이스 감지
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // 딥링크 시도
+                window.location.href = appScheme;
+                
+                // 앱이 설치되지 않은 경우를 대비해 스토어로 리디렉션
+                setTimeout(() => {
+                    if (isAndroid) {
+                        window.location.href = playStoreUrl;
+                    } else if (isIOS) {
+                        window.location.href = appStoreUrl;
+                    }
+                }, 1000);
+            } else {
+                // 데스크톱에서는 안내 메시지 표시
+                alert('모바일 기기에서 Kolektt 앱을 다운로드하여 이용해주세요.');
+            }
+        }
+        
+        function toggleErrorDetails() {
+            const details = document.getElementById('errorDetails');
+            const toggle = document.querySelector('.show-details');
+            
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
+                toggle.textContent = '기술적 세부사항 숨기기';
+            } else {
+                details.style.display = 'none';
+                toggle.textContent = '기술적 세부사항 보기';
+            }
+        }
+        
+        // URL 파라미터에서 오류 정보 추출
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorCode = urlParams.get('error') || urlParams.get('error_code') || 'UNKNOWN';
+            const errorMessage = urlParams.get('error_description') || urlParams.get('message') || '알 수 없는 오류';
+            
+            // 오류 정보 표시
+            document.getElementById('errorCode').textContent = errorCode;
+            document.getElementById('errorMessage').textContent = decodeURIComponent(errorMessage);
+            document.getElementById('timestamp').textContent = new Date().toISOString();
+            document.getElementById('urlParams').textContent = window.location.search || '없음';
+            
+            // 특정 오류에 대한 맞춤 메시지
+            const subtitle = document.querySelector('.subtitle');
+            switch (errorCode.toLowerCase()) {
+                case 'token_expired':
+                case 'expired':
+                    subtitle.innerHTML = '인증 링크가 만료되었습니다.<br>앱에서 새로운 인증 이메일을 요청해주세요.';
+                    break;
+                case 'invalid_token':
+                case 'invalid':
+                    subtitle.innerHTML = '유효하지 않은 인증 링크입니다.<br>올바른 링크인지 확인하거나 새로운 이메일을 요청해주세요.';
+                    break;
+                case 'already_confirmed':
+                    subtitle.innerHTML = '이미 인증이 완료된 이메일입니다.<br>앱에서 로그인을 시도해주세요.';
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

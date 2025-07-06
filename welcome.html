@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolektt - 회원가입 완료</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .welcome-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: celebration 2s ease-in-out infinite alternate;
+        }
+        
+        .welcome-icon::after {
+            content: "🎉";
+            font-size: 48px;
+        }
+        
+        @keyframes celebration {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            100% {
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: #3498db;
+            font-weight: 600;
+        }
+        
+        .app-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+        
+        .app-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feature-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .feature-card p {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        .stats {
+            background: linear-gradient(135deg, #f8f9fa, #ecf0f1);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .stats h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3498db;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            color: #95a5a6;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 30px 20px;
+                margin-top: 10px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .logo {
+                font-size: 32px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Kolektt</div>
+        
+        <div class="welcome-icon"></div>
+        
+        <h1>환영합니다!</h1>
+        
+        <p class="subtitle">
+            <span class="highlight">Kolektt</span> 가족이 되신 것을 축하드립니다!<br>
+            이제 나만의 바이닐 레코드 컬렉션 여정을 시작할 준비가 되었습니다.
+        </p>
+        
+        <a href="#" class="app-button" onclick="openApp()">컬렉션 시작하기</a>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>📀 컬렉션 관리</h3>
+                <p>바이닐 레코드를 체계적으로 관리하고 정리해보세요</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>💝 위시리스트</h3>
+                <p>갖고 싶은 레코드를 위시리스트에 담고 추적해보세요</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📊 분석 도구</h3>
+                <p>컬렉션 통계와 트렌드를 한눈에 확인해보세요</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🤝 커뮤니티</h3>
+                <p>다른 컬렉터들과 소통하고 정보를 공유해보세요</p>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h3>🌟 Kolektt 커뮤니티</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <div class="stat-label">사용자</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <div class="stat-label">컬렉션</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100K+</span>
+                    <div class="stat-label">레코드</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            문의사항이 있으시면 <a href="mailto:support@kolektt.com">support@kolektt.com</a>으로 연락해주세요.<br>
+            <a href="index.html">개인정보처리방침</a> | <a href="mailto:privacy@kolektt.com">개인정보보호 문의</a>
+        </div>
+    </div>
+
+    <script>
+        function openApp() {
+            // 앱으로 리디렉션 시도 (딥링크)
+            const appScheme = 'kolektt://welcome';
+            const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.kolektt.app';
+            const appStoreUrl = 'https://apps.apple.com/app/kolektt/id123456789';
+            
+            // 모바일 디바이스 감지
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // 딥링크 시도
+                window.location.href = appScheme;
+                
+                // 앱이 설치되지 않은 경우를 대비해 스토어로 리디렉션
+                setTimeout(() => {
+                    if (isAndroid) {
+                        window.location.href = playStoreUrl;
+                    } else if (isIOS) {
+                        window.location.href = appStoreUrl;
+                    }
+                }, 1000);
+            } else {
+                // 데스크톱에서는 안내 메시지 표시
+                alert('모바일 기기에서 Kolektt 앱을 다운로드하여 이용해주세요.');
+            }
+        }
+        
+        // 애니메이션 효과
+        window.addEventListener('load', () => {
+            // 순차적으로 요소들을 나타나게 함
+            const elements = document.querySelectorAll('.feature-card');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(20px)';
+                    element.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+        
+        // URL 파라미터에서 사용자 정보 추출 (있는 경우)
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name') || urlParams.get('user_name');
+        if (userName) {
+            const subtitle = document.querySelector('.subtitle');
+            subtitle.innerHTML = `<span class="highlight">${decodeURIComponent(userName)}</span>님, <span class="highlight">Kolektt</span> 가족이 되신 것을 축하드립니다!<br>이제 나만의 바이닐 레코드 컬렉션 여정을 시작할 준비가 되었습니다.`;
+        }
+    </script>
+</body>
+</html>
